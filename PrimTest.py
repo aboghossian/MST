@@ -5,7 +5,7 @@ import random
 
 out_file = open("results.txt", "w")
 trials = 5
-num_points = [128, 256, 512, 1024, 2048, 4096, 8192, 16384, 32768, 65536, 131072, 262144]
+num_points = [8192, 16384, 32768, 65536, 131072, 262144]
 dims = [0, 2, 3, 4]
 
 for n in num_points:
