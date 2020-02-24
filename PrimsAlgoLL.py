@@ -20,7 +20,7 @@ def prims_ll(graph, s):
 
         # loop through neighbors updating distances if not visited
         for w in range(len(graph[v])):
-            if (w not in vertex_set) and (distances[w] > graph[v][w]):
+            if (distances[w] > graph[v][w]) and (w not in vertex_set):
                 distances[w] = graph[v][w]
                 in_heap = heap.search(w)
                 if in_heap is not None:

@@ -16,8 +16,10 @@ for n in num_points:
             g = generate_graph(n, d)
             mst = prims(g, 0)
             res += mst
+            print(t, end=":")
         res = res/trials
         line = "{}, {}, {}".format(d, n, res)
         out_file.write(line + "\n")
+        print()
         print(n, d)
 out_file.close()
