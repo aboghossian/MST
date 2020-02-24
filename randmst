@@ -1,0 +1,8 @@
+#!/bin/bash
+
+mode=$1
+numpoints=$2
+numtrials=$3
+dimension=$4
+
+python3 ./PrimDriver.py $mode $numpoints $numtrials $dimension
