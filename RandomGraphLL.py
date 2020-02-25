@@ -30,8 +30,9 @@ def generate_graph_ll(n, dimensions):
             for row in range(column, n):
                 if column != row:
                     weight = math.sqrt((x[column] - x[row])**2 + (y[column] - y[row])**2)
-                    edge_list[column].add(Node(row, weight))
-                    edge_list[row].add(Node(column, weight))
+                    if weight <= kn:
+                        edge_list[column].add(Node(row, weight))
+                        edge_list[row].add(Node(column, weight))
 
     if dimensions == 3:
         x = [random.uniform(0, 1) for v in range(n)]
@@ -42,8 +43,9 @@ def generate_graph_ll(n, dimensions):
             for row in range(column, n):
                 if column != row:
                     weight = math.sqrt((x[column] - x[row]) ** 2 + (y[column] - y[row]) ** 2 + (z[column] - z[row])**2)
-                    edge_list[column].add(Node(row, weight))
-                    edge_list[row].add(Node(column, weight))
+                    if weight <= kn:
+                        edge_list[column].add(Node(row, weight))
+                        edge_list[row].add(Node(column, weight))
 
     if dimensions == 4:
         x = [random.uniform(0, 1) for v in range(n)]
@@ -55,7 +57,8 @@ def generate_graph_ll(n, dimensions):
             for row in range(column, n):
                 if column != row:
                     weight = math.sqrt((x[column] - x[row])**2 + (y[column] - y[row])**2 + (z[column] - z[row])**2 + (w[column] - w[row])**2)
-                    edge_list[column].add(Node(row, weight))
-                    edge_list[row].add(Node(column, weight))
+                    if weight <= kn:
+                        edge_list[column].add(Node(row, weight))
+                        edge_list[row].add(Node(column, weight))
 
     return edge_list
