@@ -6,7 +6,7 @@ from LinkedList import *
 # function to generate a random graph
 # takes n (num nodes) and a dimension used for random weights
 def generate_graph_ll(n, dimensions):
-    kn = n**(-0.7) + (dimensions + 1)/10
+    kn = n**(-0.7) * 2
 
     # n by n matrix of edges
     edge_list = [LinkedList() for i in range(n)]

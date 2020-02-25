@@ -35,5 +35,5 @@ def prims_ll_v2(graph, s):
             current = current.next
 
     # return the sum of the distance array (MST edges)
-    print(len(vertex_set))
+    print(len(vertex_set) == len(graph))
     return sum(distances)

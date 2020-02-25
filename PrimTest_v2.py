@@ -17,7 +17,6 @@ for n in num_points:
             g = generate_graph_ll(n, d)
             mst = prims_ll_v2(g, 0)
             res += mst
-            print(t)
         res = res/trials
         line = "{}, {}, {}".format(d, n, res)
         out_file.write(line + "\n")
