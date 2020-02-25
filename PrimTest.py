@@ -10,7 +10,6 @@ dims = [0, 2, 3, 4]
 
 for n in num_points:
     for d in dims:
-        random.seed(d * n)
         res = 0
         for t in range(trials):
             g = generate_graph(n, d)
@@ -20,5 +19,6 @@ for n in num_points:
         res = res/trials
         line = "{}, {}, {}".format(d, n, res)
         out_file.write(line + "\n")
+        out_file.flush()
         print(n, d, res)
 out_file.close()
