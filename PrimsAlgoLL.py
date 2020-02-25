@@ -5,6 +5,7 @@ from LinkedList import *
 # takes graph and a vertex to start from
 def prims_ll(graph, s):
 
+    n = range(len(graph))
     vertex_set = []  # visited vertices
     heap = LinkedList()  # heap
     heap.add(Node(s, 0))  # add s with weight 0
@@ -19,7 +20,7 @@ def prims_ll(graph, s):
         vertex_set.append(v)  # mark as visited
 
         # loop through neighbors updating distances if not visited
-        for w in range(len(graph[v])):
+        for w in n:
             if (distances[w] > graph[v][w]) and (w not in vertex_set):
                 distances[w] = graph[v][w]
                 in_heap = heap.search(w)
