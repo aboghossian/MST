@@ -20,11 +20,9 @@ def prims_ll_v2(graph, s):
         vertex_set.append(v)  # mark as visited
 
         # loop through neighbors updating distances if not visited
-        adj_list = graph[v]
-        current = adj_list.head
-        while current is not None:
-            w = current.vertex
-            e = current.weight
+        for neighbor in graph[v]:
+            w = neighbor[0]
+            e = neighbor[1]
             if (distances[w] > e) and (w not in vertex_set):
                 distances[w] = e
                 in_heap = heap.search(w)
@@ -32,7 +30,6 @@ def prims_ll_v2(graph, s):
                     in_heap.weight = distances[w]
                 else:
                     heap.add(Node(w, distances[w]))
-            current = current.next
 
     # return the sum of the distance array (MST edges)
     print(len(vertex_set) == len(graph))
